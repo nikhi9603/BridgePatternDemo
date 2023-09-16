@@ -1,4 +1,16 @@
-﻿using System;
+﻿/******************************************************************************
+* Filename    = DetailedView.cs
+*
+* Author      = Nikhitha Atyam
+*
+* Product     = BridgeDesignPatternDemo
+* 
+* Project     = BridgePattern
+*
+* Description = DetailedView implements Visualisation of Shapes in a more detailed manner
+*****************************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +18,16 @@ using System.Threading.Tasks;
 
 namespace BridgePattern
 {
+    /// <summary>
+    /// DetailedView implements Visualisation of Shapes in a more detailed manner
+    /// </summary>
     public class DetailedView : IDrawingView
     {
+        /// <summary>
+        /// Function has to draw circle. Due to complexity of drawing circle, considered displaying properties of circle instead
+        /// </summary>
+        /// <param name="radius">Radius of circle</param>
+        /// <returns>Detailed description of circle</returns>
         public List<string> DisplayCircle(double radius)
         {
             List<string> result = new List<string> { "Detailed View of Circle" };
@@ -20,6 +40,13 @@ namespace BridgePattern
             return result;
         }
 
+
+
+        /// <summary>
+        /// Function has to draw square. Due to complexity of drawing square, considered displaying properties of square instead
+        /// </summary>
+        /// <param name="length">length of square</param>
+        /// <returns>Detailed description of square</returns>
         public List<string> DisplaySquare(double length)
         {
             List<string> result = new List<string> { "Detailed View of Square" };

@@ -1,13 +1,32 @@
-﻿using BridgePattern;
+﻿/******************************************************************************
+* Filename    = BridgeDesignUnitTest.cs
+*
+* Author      = Nikhitha Atyam
+*
+* Product     = BridgeDesignPatternDemo
+* 
+* Project     = UnitTests
+*
+* Description = BridgeDesignUnitTest contains test methods to validate the implementation of the Bridge Design Pattern.
+*****************************************************************************/
+
+
+using BridgePattern;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 
 namespace UnitTests
 {
+    /// <summary>
+    /// BridgeDesignUnitTest contains test methods to validate the implementation of the Bridge Design Pattern.
+    /// </summary>
     [TestClass]
     public class BridgePatternUnitTest
     {
+        /// <summary>
+        /// Validates the Description returned after Detailed View visualization of circle
+        /// </summary>
         [TestMethod]
         public void ValidDetailedCircleTest()
         {
@@ -29,6 +48,10 @@ namespace UnitTests
             Assert.AreEqual(result1.Count, result2.Count);
         }
 
+
+        /// <summary>
+        /// Validates the Description returned after Brief View visualization of circle
+        /// </summary>
         [TestMethod]
         public void ValidBriefCircleTest() 
         {
@@ -44,6 +67,11 @@ namespace UnitTests
             Assert.AreEqual(result[1], $"Drawing Circle with radius 2 units");
         }
 
+
+
+        /// <summary>
+        /// Validates the Description returned after Detailed View visualization of square
+        /// </summary>
         [TestMethod]
         public void ValidDetailSquareTest() 
         {
@@ -65,6 +93,9 @@ namespace UnitTests
             Assert.AreEqual(result1.Count, result2.Count);
         }
 
+        /// <summary>
+        /// Validates the Description returned after Brief View visualization of square
+        /// </summary>
         [TestMethod]
         public void ValidBriefSquareTest()
         {
@@ -80,6 +111,10 @@ namespace UnitTests
             Assert.AreEqual(result[1], $"Drawing Square with length 4.5 units");
         }
 
+
+        /// <summary>
+        /// When radius <= 0 => Circle Constructor throws an Argument Exception for invalid radius. Checks whether exception being thrown or not
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentException) , "Invalid radius of Circle")]
         public void InvalidCircleTest()
@@ -88,9 +123,14 @@ namespace UnitTests
 
             Shapes _ = new Circle(new DetailedView(), radius);
 
+            // If control reaches here => Argument Exception not thrown
             Assert.Fail("Argument Exception was not raised for invalid radius");
         }
 
+
+        /// <summary>
+        /// When length <= 0 => Square Constructor throws an Argument Exception for invalid length. Checks whether exception being thrown or not
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(ArgumentException) , "Invalid length of square")]
         public void InvalidSquareTest()
@@ -99,6 +139,7 @@ namespace UnitTests
 
             Shapes _ = new Square(new DetailedView() , length);
 
+            // If control reaches here => Argument Exception not thrown
             Assert.Fail("Argument Exception was not raised for invalid length");
         }
     }
