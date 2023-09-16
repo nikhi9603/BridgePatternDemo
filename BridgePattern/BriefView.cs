@@ -8,35 +8,19 @@ namespace BridgePattern
 {
     public class BriefView : IDrawingView
     {
-        public List<string> displayCircle(double radius)
+        public List<string> DisplayCircle(double radius)
         {
-            List<string> result = new List<string>();
-            result.Add("Brief View of Circle");
+            List<string> result = new List<string> { "Brief View of Circle" };
 
-            if (radius > 0)
-            {
-                result.Add($"Drawing Circle with radius {radius} units");
-            }
-            else
-            {
-                result.Add($"ERROR: Invalid radius of Circle ({radius})");
-            }
+            result.Add($"Drawing Circle with radius {radius} units");
             return result;
         }
 
-        public List<string> displaySquare(double length)
+        public List<string> DisplaySquare(double length)
         {
-            List<string> result = new List<string>();
-            result.Add("Brief View of Square");
+            List<string> result = new List<string> { "Brief View of Square" };
 
-            if (length > 0)
-            {
-                result.Add($"Drawing Square with length {length} units");
-            }
-            else
-            {
-                result.Add($"ERROR: Invalid length of Square ({length})");
-            }
+            result.Add($"Drawing Square with length {length} units");
             return result;
         }
     }

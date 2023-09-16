@@ -8,39 +8,27 @@ namespace BridgePattern
 {
     public class DetailedView : IDrawingView
     {
-        public List<string> displayCircle(double radius)
+        public List<string> DisplayCircle(double radius)
         {
-            List<string> result = new List<string>();
-            result.Add("Detailed View of Circle");
+            List<string> result = new List<string> { "Detailed View of Circle" };
 
-            if(radius > 0)
-            {
-                double area = Math.PI * Math.Pow(radius, 2);
-                result.Add($"Drawing Circle with radius {radius} units");
-                result.Add($"Area of Circle = {area} sq.units");
-            }
-            else
-            {
-                result.Add($"ERROR: Invalid radius of Circle ({radius})");
-            }
+            double area = Math.PI * Math.Pow(radius, 2);
+            double perimeter = 2 * Math.PI * radius;
+            result.Add($"Drawing Circle with radius {radius} units");
+            result.Add($"Area of Circle = {area} sq.units");
+            result.Add($"Perimeter of Circle = {perimeter} units");
             return result;
         }
 
-        public List<string> displaySquare(double length)
+        public List<string> DisplaySquare(double length)
         {
-            List<string> result = new List<string>();
-            result.Add("Detailed View of Square");
+            List<string> result = new List<string> { "Detailed View of Square" };
 
-            if (length > 0)
-            {
-                double area = Math.Pow(length, 2);
-                result.Add($"Drawing Square with length {length} units");
-                result.Add($"Area of Square = {area} sq.units");
-            }
-            else
-            {
-                result.Add($"ERROR: Invalid length of Square ({length})"); 
-            }
+            double area = Math.Pow(length, 2);
+            double perimeter = 4 * length;
+            result.Add($"Drawing Square with length {length} units");
+            result.Add($"Area of Square = {area} sq.units");
+            result.Add($"Perimeter of Square = {perimeter} units");
             return result;
         }
     }

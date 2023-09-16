@@ -8,27 +8,46 @@ namespace BridgePattern
 {
     public class Square : Shapes
     {
+        private readonly double _length;
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="_view"></param>
-        public Square(IDrawingView _view) : base(_view) { }
-
-        public Square() : base(new DetailedView()) { }
-
-        public override List<string> display(List<double> values)
+        public Square(IDrawingView _view , double length) : base(_view) 
         {
-            List<string> result = new List<string>();
-
-            if (values.Count != 0)
+            if (length > 0)
             {
-                result.Add($"ERROR: Received more than 1 argument for Square to display");
-                return result;
+                this._length = length;
             }
             else
             {
-                return base.view.displaySquare(values[0]);
+                throw new ArgumentException("Invalid length of square");
             }
+        }
+
+        public Square(double length) : base(new DetailedView()) 
+        {
+            if (length > 0)
+            {
+                this._length = length;
+            }
+            else
+            {
+                throw new ArgumentException("Invalid length of square");
+            }
+        }
+
+        public override List<string> Display()
+        {
+            List<string> result;
+            result =  base.view.DisplaySquare(this._length);
+
+            foreach(string str in result)
+            {
+                Console.WriteLine(str);
+            }
+            return result;
         }
     }
 }

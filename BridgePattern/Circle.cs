@@ -8,23 +8,48 @@ namespace BridgePattern
 {
     public class Circle : Shapes
     {
-        public Circle(IDrawingView view) : base(view) { }
-
-        public Circle() : base(new DetailedView()) { }
-
-        public override List<string> display(List<double> values)
+        private readonly double _radius ;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="_view"></param>
+        public Circle(IDrawingView _view , double radius) : base(_view) 
         {
-            List<string> result = new List<string>();
-
-            if(values.Count != 0) 
+            if (radius > 0)
             {
-                result.Add($"ERROR: Received more than 1 argument for Circle to display");
-                return result;
+                this._radius = radius;
             }
             else
             {
-                return base.view.displayCircle(values[0]); 
+                throw new ArgumentException("Invalid radius of circle");
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Circle(double radius) : base(new DetailedView()) 
+        {
+            if (radius > 0)
+            {
+                this._radius = radius;
+            }
+            else
+            {
+                throw new ArgumentException("Invalid radius of circle");
+            }
+        }
+
+        public override List<string> Display()
+        {
+            List<string> result;
+
+            result = base.view.DisplayCircle(this._radius);
+            foreach (string str in result)
+            {
+                Console.WriteLine(str);
+            }
+            return result;
         }
     }
 }

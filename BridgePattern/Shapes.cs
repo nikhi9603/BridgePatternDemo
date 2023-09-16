@@ -10,11 +10,11 @@ namespace BridgePattern
     {
         protected IDrawingView view;
 
-        public Shapes(IDrawingView _view) 
+        public Shapes(IDrawingView view) 
         {  
-            this.view = _view; 
+            this.view = view; 
         }
 
-        public abstract List<string> display(List<double> values);
+        public abstract List<string> Display();
     }
 }

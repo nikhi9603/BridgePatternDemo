@@ -8,7 +8,7 @@ namespace BridgePattern
 {
     public interface IDrawingView
     {
-        List<string> displaySquare(double length);
-        List<string> displayCircle(double radius);
+        List<string> DisplaySquare(double length);
+        List<string> DisplayCircle(double radius);
     }
 }
