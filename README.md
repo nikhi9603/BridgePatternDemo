@@ -1,7 +1,7 @@
 ### Bridge Design Pattern Demo
 
 #### Overview
-Bridge pattern is a structural design pattern used in software engineering that is meant to "decouple an abstraction from its implementation so that the two can vary independently".
+Bridge pattern is a structural design pattern used in software engineering that is meant to "decouple an abstraction from its implementation so that the two can vary independently". It prefers composition over inheritance.
 * Real world applications of bridge pattern include Notification Systems, Remote Control, Printers, GUI Libraries etc.. 
 * GUI libraries often use the bridge pattern to separate the high-level GUI components (such as buttons and menus) from the platform-specific implementation details. This allows developers to create cross-platform GUIs that work on different operating systems. This can also be implemented as LongView , ShortView (platform specific) of different pages. 
 </br> Due to complexities of implementation of visualization of different pages as long view & short view, this project implements DetailView & BriefView of Visualization of Shapes (i.e. description of shapes) 

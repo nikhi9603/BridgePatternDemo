@@ -1,9 +1,9 @@
 ﻿/******************************************************************************
-* Filename    = BridgeDesignUnitTest.cs
+* Filename    = BridgePatternUnitTest.cs
 *
 * Author      = Nikhitha Atyam
 *
-* Product     = BridgeDesignPatternDemo
+* Product     = BridgePatternDemo
 * 
 * Project     = UnitTests
 *

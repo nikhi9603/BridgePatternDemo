@@ -3,7 +3,7 @@
 *
 * Author      = Nikhitha Atyam
 *
-* Product     = BridgeDesignPatternDemo
+* Product     = BridgeDesignDemo
 * 
 * Project     = BridgePattern
 *
